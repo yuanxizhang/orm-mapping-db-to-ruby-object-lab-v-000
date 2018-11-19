@@ -70,4 +70,13 @@ class Student
   end
   
   def self.students_below_12th_grade
+    sql = <<-SQL
+        SELECT * FROM students
+        WHERE grade < 12
+        SQL
+    
+    # return a new instance of the Student class
+    DB[:conn].execute(sql).map{|row| Student.new_from_db(row)}
+ 
+  end
 end
