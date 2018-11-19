@@ -64,7 +64,6 @@ class Student
         WHERE grade = 9
         SQL
     
-    # return a new instance of the Student class
     DB[:conn].execute(sql).map{|row| Student.new_from_db(row)}
   end
   
@@ -74,7 +73,6 @@ class Student
         WHERE grade < 12
         SQL
     
-    # return a new instance of the Student class
     DB[:conn].execute(sql).map{|row| Student.new_from_db(row)}
   end
 end
