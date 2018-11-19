@@ -66,7 +66,6 @@ class Student
     
     # return a new instance of the Student class
     DB[:conn].execute(sql).map{|row| Student.new_from_db(row)}
- 
   end
   
   def self.students_below_12th_grade
@@ -77,6 +76,5 @@ class Student
     
     # return a new instance of the Student class
     DB[:conn].execute(sql).map{|row| Student.new_from_db(row)}
- 
   end
 end
